@@ -1,0 +1,48 @@
+#points {
+    text-align: center;
+    font-weight: bold;
+    padding-top: 100px;
+    padding-bottom: 7px;
+}
+
+img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 16%;
+}
+
+.row {
+    text-align: center;
+}
+
+.card {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 20%;
+  border-radius: 10px;
+}
+
+.button:hover {
+  background-color: #550;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%),
+  0 2px 10px 0 rgb(0 0 0 / 12%);
+}
