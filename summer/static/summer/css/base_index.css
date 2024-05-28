@@ -1,0 +1,57 @@
+.alerts {
+    margin-top: 5px;
+    padding-top: 4px;
+}
+
+
+.footer1 li {
+    display: inline;
+    padding-left: 5px;
+    padding-right: 10px;
+}
+
+.footer1 {
+    text-align: center;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.footer1 a:hover {
+    text-decoration: underline;
+}
+
+.nav-item:hover {
+    box-shadow: 0 2px 5px 0 #6495ED,  0 2px 10px 0 #6495ED;
+    border-radius: 10px;
+}
+
+#top_logo {
+    width: 2%;
+}
+
+.nav-item button {
+    background-color: white;
+    border: none;
+    font-family: sans-serif;
+    outline: none;
+}
+
+.footer1 form {
+    display: inline;
+}
+
+.footer1 button {
+    border: none;
+    color: white;
+    background-color: #757F95;
+    outline: none;
+}
+
+.footer1 button:hover {
+    text-decoration: underline;
+}
+
+.messages {
+    padding-top: 19px;
+    display: block;
+}
