@@ -1,0 +1,102 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+  <!-- TOP NAVBAR -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+    <div class="container">
+      <img id="top_logo" src="{% static 'summer/images/logo.jpg' %}">
+      <!-- ICSS (Iglesia Christiana Shalom Store) -->
+      <a class="navbar-brand waves-effect" href="/home" target="_blank">
+        <strong class="blue-text">ICS</strong>
+      </a>
+
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- ALL TOP LEFT LINKS -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="/home">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <!-- MY POINTS LINK -->
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="/points" target="_blank">My Points</a>
+          </li>
+          <!-- STORE LINK -->
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="/store"
+              target="_blank">Store</a>
+          </li>
+          <!-- UNUSED LINK -->
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link waves-effect" href="{% url 'accounts:signup' %}" target="_blank">-->
+<!--              | Sign Up Here |</a>-->
+<!--          </li>-->
+        </ul>
+
+        <!-- ALL TOP RIGHT LINKS -->
+        <ul class="navbar-nav nav-flex-icons">
+          <!-- CART LINK -->
+          {% if request.user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link waves-effect">
+              <span class="badge red z-depth-1 mr-1"> 0 </span>
+              <i class="fas fa-shopping-cart"></i>
+              <span class="clearfix d-none d-sm-inline-block"> Cart </span>
+            </a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="{% url 'accounts:login' %}">
+              <span class="clearfix d-none d-sm-inline-block"> Login </span>
+            </a>
+          </li>
+          {% endif %}
+          <!-- FACEBOOK LINK -->
+          <li class="nav-item">
+            <a href="https://www.facebook.com/?stype=lo&jlou=AfcUZtv5C4-92SV9OhslLyQgBFoK5AintMBjNfxhUSwuXSReWTjPbEtWgq5DqH5-Jm05q_z5iKWaB5dng2PYqvngmOa6OMPwnUcx-kAJAPdH7g&smuh=9599&lh=Ac8nTwnD-F-lyjhhI6I"
+               class="nav-link waves-effect" target="_blank">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+          <!-- TWITTER LINK -->
+          <li class="nav-item">
+            <a href="https://twitter.com/?lang=en" class="nav-link waves-effect" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          {% if request.user.is_authenticated %}
+          <!-- LOGOUT LINK -->
+          <li class="nav-item">
+            <a class="nav-link waves-effect">
+              <form  method="POST" action="{% url 'accounts:logout' %}">
+                {% csrf_token %}
+                <button type="submit" value="logout"> Logout </button>
+              </form>
+            </a>
+          </li>
+          {% else %}
+          <!-- SIGN UP LINK -->
+          <li class="nav-item">
+            <a href="{% url 'accounts:signup' %}" class="nav-link border border-light rounded waves-effect"
+              target="_blank">
+              <!-- fab fa-github mr-2 -->
+              <i class="#"></i>Sign Up Here
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  <!-- TOP NAVBAR -->

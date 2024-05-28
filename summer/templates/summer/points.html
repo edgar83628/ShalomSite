@@ -1,0 +1,27 @@
+{% extends 'summer/base_layout.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+    <title>My Points</title>
+    <link rel="stylesheet" href="{% static 'summer/css_styles/points.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<h2 id="points">My Points</h2>
+<div class="row">
+    <div class="card">
+      <img src="{% static 'summer/images/awards.png' %}" alt="groups" style="padding-top: 20px;">
+      <div class="container">
+        <h2>Points</h2>
+        <p></p>
+        <p>Participate and join us again each day for more points.</p>
+        <p class="title">Participa y únete a nosotros de nuevo cada día para obtener más puntos.</p>
+        <p><a href="/home"><button class="button">Go Home</button></a></p>
+      </div>
+  </div>
+</div>
+
+{% endblock %}
+
